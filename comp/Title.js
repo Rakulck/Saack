@@ -11,7 +11,7 @@ const Title = () => {
         />
       </View>
       <View style={styles.titleContainer}>
-        <Text style={styles.titleText}>DAGAMA</Text>
+        <Text style={styles.titleText}>SAaCKs</Text>
       </View>
       <View style={styles.profileImageContainer}>
         <Image

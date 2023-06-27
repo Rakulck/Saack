@@ -8,17 +8,12 @@ import {
   StyleSheet,
 } from "react-native";
 
-import comment from "../homepageIcons/comment.png";
-import share from "../homepageIcons/share.png";
-import wishlist from "../homepageIcons/watchlist.png";
-import bag from "../homepageIcons/Bag.png";
-
 const Posts = () => {
   const data = [
     {
       postId: 1,
       dp: require("../assets/kemal.jpg"),
-      name: "ckrakul",
+      name: "Punda Kumar ",
       wishlist: require("../homepageIcons/watchlist.png"),
       post: require("../assets/lbj.jpg"),
       description: "lorem ipsum dolor sit amet",
@@ -30,7 +25,7 @@ const Posts = () => {
     {
       postId: 2,
       dp: require("../assets/cola.jpeg"),
-      name: "ckrakul",
+      name: "Sam Kumar",
       wishlist: require("../homepageIcons/watchlist.png"),
       post: require("../assets/del.png"),
       description: "lorem ipsum dolor sit amet",

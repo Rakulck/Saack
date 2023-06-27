@@ -1,5 +1,5 @@
-import { View, Text, SafeAreaView, StyleSheet, ScrollView } from "react-native";
 import React from "react";
+import { View, Text, SafeAreaView, StyleSheet, FlatList } from "react-native";
 
 import Stories from "../comp/Stories";
 import Title from "../comp/Title";
@@ -8,11 +8,16 @@ import Posts from "../comp/Posts";
 const StoreScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView>
-        <Stories />
-        <Title />
-        <Posts />
-      </ScrollView>
+      <FlatList
+        ListHeaderComponent={
+          <>
+            <Stories />
+            <Title />
+          </>
+        }
+        data={[{ key: "posts" }]}
+        renderItem={({ item }) => <Posts />}
+      />
     </SafeAreaView>
   );
 };
