@@ -84,7 +84,7 @@ const Posts = () => {
           </View>
         </View>
 
-        <Text style={styles.boughtby}> Bought by</Text>
+        <Text style={styles.boughtby}> Also Bought by</Text>
       </View>
     );
   };
@@ -106,7 +106,7 @@ export default Posts;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "white",
-    borderRadius: 10,
+    borderRadius: 15,
     marginTop: "5%",
     paddingHorizontal: "5%",
   },
