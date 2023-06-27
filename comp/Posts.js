@@ -60,6 +60,12 @@ const Posts = () => {
           </View>
         </View>
         <Image source={item.post} style={styles.postImage} />
+
+        <View style={styles.textContainer}>
+          <Text style={styles.productName}>Lebron</Text>
+          <Text style={styles.description}>{item.description}</Text>
+        </View>
+
         <View style={styles.actionsContainer}>
           <View style={styles.likeContainer}>
             <View style={styles.likeButton}>
@@ -73,12 +79,12 @@ const Posts = () => {
             </View>
           </View>
           <View style={styles.bagContainer}>
-            <Text>Add to bag {"\u00A0"}</Text>
+            <Text>Add to Bag {"\u00A0"}</Text>
             <Image source={item.addToBag} style={styles.actionIconbag} />
           </View>
         </View>
 
-        <Text style={styles.description}>{item.description}</Text>
+        <Text style={styles.boughtby}> Bought by</Text>
       </View>
     );
   };
@@ -111,7 +117,7 @@ const styles = StyleSheet.create({
   headerContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop: "4%",
+    marginTop: "2%",
     paddingHorizontal: "3%",
   },
   dp: {
@@ -164,8 +170,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
-    width: "40%",
-    height: "110%",
+    width: "42%",
+    height: "119%",
   },
   actionIconbag: {
     width: "16%",
@@ -180,11 +186,26 @@ const styles = StyleSheet.create({
     resizeMode: "stretch",
     maxWidth: "100%",
   },
+  textContainer: {
+    flexDirection: "row",
+  },
+  productName: {
+    fontSize: 15,
+    marginLeft: "3%",
+    color: "#333",
+    fontWeight: "900",
+    marginTop: "3%",
+  },
   description: {
-    fontSize: 12,
+    fontSize: 15,
     marginLeft: "2%",
     color: "#333",
     fontWeight: "500",
     marginTop: "3%",
+  },
+  boughtby: {
+    marginTop: "2%",
+    marginLeft: "3%",
+    fontSize: 14,
   },
 });
