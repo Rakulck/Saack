@@ -1,4 +1,12 @@
-import { View, Text, StyleSheet, FlatList, Image } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  Image,
+  Platform,
+  Dimensions,
+} from "react-native";
 import React from "react";
 
 const Stories = () => {
@@ -35,8 +43,12 @@ const Stories = () => {
       </View>
     );
   };
+
+  const isIOS = Platform.OS === "ios";
+  const marginTop = isIOS ? Dimensions.get("window").height * 0.04 : "15%";
+
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { marginTop }]}>
       <FlatList
         data={story}
         renderItem={renderStory}
@@ -48,9 +60,9 @@ const Stories = () => {
 };
 
 export default Stories;
+
 const styles = StyleSheet.create({
   container: {
-    marginTop: "15%",
     paddingHorizontal: "1%",
     backgroundColor: "black",
   },
