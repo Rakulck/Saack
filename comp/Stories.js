@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
   container: {
     marginTop: "15%",
     paddingHorizontal: "1%",
+    backgroundColor: "black",
   },
   storyContainer: {
     flexDirection: "row",
@@ -60,9 +61,6 @@ const styles = StyleSheet.create({
     borderColor: "white",
     marginLeft: 10,
   },
-  // storyContainerb: {
-  //   aspectRatio: 1,
-  // },
   storyImage: {
     width: 55,
     height: 55,
