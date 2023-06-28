@@ -45,7 +45,7 @@ function App() {
               );
             },
             tabBarLabelStyle: { display: "none" },
-            tabBarStyle: styles.tabBar,
+            tabBarStyle: [styles.tabBar, { alignItems: "center" }],
             tabBarActiveTintColor: "white",
             tabBarInactiveTintColor: "grey",
           })}
@@ -79,7 +79,6 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0, 0, 0, 0.8)",
     borderRadius: 17,
     height: "7.5%",
-    alignContent: "center",
     justifyContent: "center",
   },
 });
