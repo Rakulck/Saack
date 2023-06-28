@@ -29,7 +29,9 @@ const Stories = () => {
   const renderStory = ({ item }) => {
     return (
       <View style={styles.storyContainer}>
-        <Image source={item.image} style={styles.storyImage} />
+        <View style={styles.storyContainerb}>
+          <Image source={item.image} style={styles.storyImage} />
+        </View>
       </View>
     );
   };
@@ -55,8 +57,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flex: 1,
     borderRadius: 10,
+    borderColor: "white",
     marginLeft: 10,
   },
+  // storyContainerb: {
+  //   aspectRatio: 1,
+  // },
   storyImage: {
     width: 55,
     height: 55,

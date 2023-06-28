@@ -11,7 +11,7 @@ const Title = () => {
         />
       </View>
       <View style={styles.titleContainer}>
-        <Text style={styles.titleText}>SAaCKs</Text>
+        <Text style={styles.titleText}>SAaCK</Text>
       </View>
       <View style={styles.profileImageContainer}>
         <Image
@@ -37,6 +37,8 @@ const styles = StyleSheet.create({
   },
   imgContainer: {
     marginRight: 10,
+    backgroundColor: "#343434",
+    borderRadius: 15,
   },
   img: {
     height: 40,
