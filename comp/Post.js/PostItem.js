@@ -46,7 +46,7 @@ export default PostItem;
 
 const styles = StyleSheet.create({
   postContainer: {
-    marginVertical: "5%",
+    marginVertical: "3%",
     borderRadius: 25,
     backgroundColor: "#252525",
     paddingHorizontal: "3%",

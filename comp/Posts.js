@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "black",
     borderRadius: 12,
-    marginTop: "-1.5%",
+    marginTop: "2.5%",
     paddingHorizontal: "2%",
   },
 });
