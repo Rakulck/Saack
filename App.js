@@ -6,9 +6,9 @@ import { Ionicons } from "@expo/vector-icons";
 
 import HomeScreen from "./screens/HomeScreen";
 import ProfileScreen from "./screens/ProfileScreen";
-import OrderScreen from "./screens/OrderScreen";
-import StoreScreen from "./screens/StoreScreen.js";
-
+import ExploreScreen from "./screens/ExploreScreen";
+import ChatScreen from "./screens/ChatScreen.js";
+import ReelsScreen from "./screens/Reels";
 import home_selected from "./homepageIcons/Home_selected.png";
 import bag_selected from "./homepageIcons/Bag_selected.png";
 import vid_selected from "./homepageIcons/vid_selected.png";
@@ -29,10 +29,12 @@ function App() {
 
               if (route.name === "Home") {
                 iconSource = home_selected;
-              } else if (route.name === "Stores") {
-                iconSource = bag_selected;
-              } else if (route.name === "Orders") {
+              } else if (route.name === "Explore") {
                 iconSource = vid_selected;
+              } else if (route.name === "Reels") {
+                iconSource = vid_selected;
+              } else if (route.name === "Chat") {
+                iconSource = bag_selected;
               } else if (route.name === "Profile") {
                 iconSource = profile_selected;
               }
@@ -51,8 +53,9 @@ function App() {
           })}
         >
           <Tab.Screen name="Home" component={HomeScreen} />
-          <Tab.Screen name="Stores" component={StoreScreen} />
-          <Tab.Screen name="Orders" component={OrderScreen} />
+          <Tab.Screen name="Explore" component={ExploreScreen} />
+          <Tab.Screen name="Reels" component={ReelsScreen} />
+          <Tab.Screen name="Chat" component={ChatScreen} />
           <Tab.Screen name="Profile" component={ProfileScreen} />
         </Tab.Navigator>
       </View>
@@ -77,7 +80,7 @@ const styles = StyleSheet.create({
     right: "6%",
     bottom: "2%",
     backgroundColor: "rgba(0, 0, 0, 0.8)",
-    borderRadius: 17,
+    bExploreRadius: 17,
     height: "7.5%",
     justifyContent: "center",
   },

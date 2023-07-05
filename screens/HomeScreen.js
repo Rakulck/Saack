@@ -1,36 +1,32 @@
-import { SafeAreaView, Text, View, StyleSheet, Image } from "react-native";
 import React from "react";
-import Welcome from "../components/Welcome";
-import Discount from "../components/Discount";
-import Store from "../components/Store";
-import Promotion from "../components/Promotion";
+import { View, Text, SafeAreaView, StyleSheet, FlatList } from "react-native";
+
+import Stories from "../components/home_components/Stories";
+import Title from "../components/home_components/Title";
+import Posts from "../components/home_components/Posts";
 
 const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Welcome />
-      <View style={styles.Dcontainer}>
-        <Discount />
-      </View>
-      <View>
-        <Store />
-      </View>
-      <View>
-        <Promotion />
-      </View>
+      <FlatList
+        ListHeaderComponent={
+          <>
+            <Stories />
+            <Title />
+          </>
+        }
+        data={[{ key: "posts" }]}
+        renderItem={({ item }) => <Posts />}
+      />
     </SafeAreaView>
   );
 };
 
-export default HomeScreen;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
-    color: "white",
-  },
-  Dcontainer: {
-    paddingTop: 30,
+    backgroundColor: "black",
   },
 });
+
+export default HomeScreen;
