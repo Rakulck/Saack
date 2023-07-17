@@ -12,25 +12,25 @@ import React from "react";
 const Stories = () => {
   const story = [
     {
-      image: require("../assets/cola.jpeg"),
+      image: require("../../assets/del.png"),
     },
     {
-      image: require("../assets/favicon.png"),
+      image: require("../../assets/favicon.png"),
     },
     {
-      image: require("../assets/del.png"),
+      image: require("../../assets/del.png"),
     },
     {
-      image: require("../assets/del.png"),
+      image: require("../../assets/del.png"),
     },
     {
-      image: require("../assets/del.png"),
+      image: require("../../assets/del.png"),
     },
     {
-      image: require("../assets/del.png"),
+      image: require("../../assets/del.png"),
     },
     {
-      image: require("../assets/del.png"),
+      image: require("../../assets/del.png"),
     },
     // Add more discount items as needed
   ];

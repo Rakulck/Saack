@@ -1,7 +1,7 @@
 import { View, SafeAreaView, StyleSheet, Text } from "react-native";
 import React from "react";
 
-import Bio from "../components/profile_components/bio";
+import Bio from "../components/profile_components/Bio";
 import Wishlist from "../components/profile_components/Wishlist";
 import Cart from "../components/profile_components/Cart";
 

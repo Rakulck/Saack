@@ -6,7 +6,7 @@ const Title = () => {
     <View style={styles.container}>
       <View style={styles.imgContainer}>
         <Image
-          source={require("../homepageIcons/quick_actions.png")}
+          source={require("../../homepageIcons/quick_actions.png")}
           style={styles.img}
         />
       </View>
@@ -15,7 +15,7 @@ const Title = () => {
       </View>
       <View style={styles.profileImageContainer}>
         <Image
-          source={require("../assets/kemal.jpg")}
+          source={require("../../assets/kemal.jpg")}
           style={styles.profileImage}
         />
       </View>
