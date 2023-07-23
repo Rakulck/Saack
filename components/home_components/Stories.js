@@ -1,81 +1,113 @@
+import React, { useState } from "react";
 import {
   View,
-  Text,
   StyleSheet,
   FlatList,
   Image,
-  Platform,
-  Dimensions,
+  TouchableOpacity,
 } from "react-native";
-import React from "react";
+import ViewStoryContent from "./ViewStoryContent";
 
 const Stories = () => {
   const story = [
     {
-      image: require("../../assets/del.png"),
+      image: require("../../assets/posts1.jpg"),
     },
     {
-      image: require("../../assets/favicon.png"),
+      image: require("../../assets/posts3.jpg"),
     },
     {
-      image: require("../../assets/del.png"),
+      image: require("../../assets/posts12.jpg"),
     },
     {
-      image: require("../../assets/del.png"),
+      image: require("../../assets/posts4.jpg"),
     },
     {
-      image: require("../../assets/del.png"),
+      image: require("../../assets/posts7.jpg"),
     },
     {
-      image: require("../../assets/del.png"),
+      image: require("../../assets/posts9.jpg"),
     },
     {
-      image: require("../../assets/del.png"),
+      image: require("../../assets/posts10.jpg"),
     },
-    // Add more discount items as needed
+    // Add more story items as needed
   ];
-  const renderStory = ({ item }) => {
-    return (
-      <View style={styles.storyContainer}>
-        <View style={styles.storyContainerb}>
-          <Image source={item.image} style={styles.storyImage} />
-        </View>
-      </View>
+
+  const [selectedStoryIndex, setSelectedStoryIndex] = useState(null);
+
+  const handlePrevStory = () => {
+    setSelectedStoryIndex((prevIndex) =>
+      prevIndex === 0 ? null : prevIndex - 1
     );
   };
 
-  const isIOS = Platform.OS === "ios";
-  const marginTop = isIOS ? Dimensions.get("window").height * 0.04 : "15%";
+  const handleNextStory = () => {
+    setSelectedStoryIndex((prevIndex) =>
+      prevIndex === story.length - 1 ? null : prevIndex + 1
+    );
+  };
+
+  const renderStory = ({ item, index }) => {
+    const isSelected = index === selectedStoryIndex;
+
+    return (
+      <TouchableOpacity
+        style={[
+          styles.storyContainer,
+          isSelected && styles.selectedStoryContainer,
+        ]}
+        onPress={() => setSelectedStoryIndex(index)}
+      >
+        <Image source={item.image} style={styles.storyImage} />
+      </TouchableOpacity>
+    );
+  };
+
+  const selectedStory = story[selectedStoryIndex]?.image; // Get the selected story image
 
   return (
-    <View style={[styles.container, { marginTop }]}>
+    <View style={styles.container}>
       <FlatList
         data={story}
         renderItem={renderStory}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item, index) => index.toString()}
         horizontal
+      />
+      {/* Render the ViewStoryContent component when a story is selected */}
+      <ViewStoryContent
+        isVisible={selectedStoryIndex !== null}
+        onClose={() => setSelectedStoryIndex(null)}
+        source={selectedStory}
+        onNext={handleNextStory}
+        onPrev={handlePrevStory}
       />
     </View>
   );
 };
 
-export default Stories;
-
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: "1%",
     backgroundColor: "black",
+    marginTop: "5%",
   },
   storyContainer: {
     flexDirection: "row",
-    flex: 1,
-    borderRadius: 10,
+    borderRadius: 15,
     borderColor: "white",
-    marginLeft: 10,
+    marginLeft: 5,
+    padding: 2,
+  },
+  selectedStoryContainer: {
+    borderWidth: 2,
+    borderColor: "white",
   },
   storyImage: {
-    width: 55,
-    height: 55,
+    width: 65,
+    height: 65,
     borderRadius: 10,
   },
 });
+
+export default Stories;

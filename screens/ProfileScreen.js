@@ -21,5 +21,6 @@ export default ProfileScreen;
 const styles = StyleSheet.create({
   container: {
     margin: "8%",
+    flex: 1,
   },
 });

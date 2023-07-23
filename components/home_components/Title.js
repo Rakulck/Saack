@@ -11,7 +11,7 @@ const Title = () => {
         />
       </View>
       <View style={styles.titleContainer}>
-        <Text style={styles.titleText}>SAaCK</Text>
+        <Text style={styles.titleText}>SACK</Text>
       </View>
       <View style={styles.profileImageContainer}>
         <Image
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    marginTop: "8%",
+    marginTop: "6%",
     paddingHorizontal: 20,
     color: "white",
     borderTopColor: "white",
@@ -42,8 +42,8 @@ const styles = StyleSheet.create({
     borderRadius: 15,
   },
   img: {
-    height: 40,
-    width: 40,
+    height: 44,
+    width: 44,
     borderRadius: 10,
   },
   titleContainer: {
@@ -52,16 +52,17 @@ const styles = StyleSheet.create({
     color: "white",
   },
   titleText: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: "bold",
     color: "white",
+    // fontFamily: "Lobster",
   },
   profileImageContainer: {
     marginLeft: "auto",
   },
   profileImage: {
-    width: 40,
-    height: 40,
+    width: 44,
+    height: 44,
     borderRadius: 15,
   },
 });

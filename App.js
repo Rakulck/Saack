@@ -83,6 +83,7 @@ const styles = StyleSheet.create({
     bExploreRadius: 17,
     height: "7.5%",
     justifyContent: "center",
+    borderRadius: 18,
   },
 });
 

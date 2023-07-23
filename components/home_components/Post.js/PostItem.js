@@ -9,7 +9,7 @@ const PostItem = ({ item }) => {
         <Image source={item.dp} style={styles.dp} />
         <Text style={styles.name}>{item.name}</Text>
         <View style={styles.wishlistContainer}>
-          <Feather name="heart" size={27} color="grey" />
+          <Feather name="bookmark" size={27} color="grey" />
         </View>
       </View>
       <Image source={item.post} style={styles.postImage} />
@@ -46,30 +46,34 @@ export default PostItem;
 
 const styles = StyleSheet.create({
   postContainer: {
-    marginVertical: "3%",
-    borderRadius: 25,
+    marginVertical: "1%",
+    borderRadius: 15,
+    marginBottom: "3%",
     backgroundColor: "#252525",
     paddingHorizontal: "3%",
-    paddingVertical: "2%",
+    paddingVertical: "1%",
   },
   headerContainer: {
     flexDirection: "row",
     alignItems: "center",
     marginTop: "2%",
     paddingHorizontal: "3%",
+    paddingBottom: "1%",
   },
   dp: {
-    width: "10%",
+    width: "11%",
     aspectRatio: 1,
     borderRadius: 15,
     marginRight: "2%",
     resizeMode: "contain",
+    marginBottom: "1%",
   },
   name: {
-    fontWeight: "500",
-    fontSize: 14,
+    fontWeight: "300",
+    fontSize: 16,
     marginRight: "2%",
     color: "#FFFFFF",
+    // fontFamily: "lobster",
   },
   wishlistContainer: {
     flex: 1,
@@ -77,10 +81,10 @@ const styles = StyleSheet.create({
   },
   postImage: {
     width: "100%",
-    height: 250,
+    height: 300,
     marginTop: "2%",
     resizeMode: "cover",
-    borderRadius: 10,
+    borderRadius: 16,
   },
   actionsContainer: {
     flexDirection: "row",
@@ -121,20 +125,22 @@ const styles = StyleSheet.create({
     color: "white",
   },
   productName: {
-    fontSize: 18,
+    fontSize: 16,
     marginLeft: "3%",
     color: "#333",
     fontWeight: "700",
     marginTop: "3%",
     color: "#FFFFFF",
+    // fontFamily: "Lobster",
   },
   description: {
     fontSize: 15,
     marginLeft: "2%",
     color: "#333",
     fontWeight: "300",
-    marginTop: "3%",
+    marginTop: "3.5%",
     color: "#FFFFFF",
+    // fontFamily: "Lobster",
   },
   boughtby: {
     marginTop: "2%",
@@ -142,6 +148,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "300",
     color: "#FFFFFF",
-    paddingBottom: "2%",
+    paddingBottom: "3%",
+    // fontFamily: "Lobster",
   },
 });
