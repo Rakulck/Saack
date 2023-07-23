@@ -2,6 +2,7 @@ import React from "react";
 import { View, Image, StyleSheet, Modal, TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
+
 const ViewStoryContent = ({ isVisible, onClose, source, onNext, onPrev }) => {
   return (
     <Modal visible={isVisible} transparent>
@@ -10,17 +11,27 @@ const ViewStoryContent = ({ isVisible, onClose, source, onNext, onPrev }) => {
         onPress={onClose}
         style={styles.modalContainer}
       >
-        <View style={styles.imageContainer}>
+        <TouchableOpacity activeOpacity={1} style={styles.imageContainer}>
           <Image source={source} style={styles.image} resizeMode="cover" />
-        </View>
-        <TouchableOpacity style={styles.closeButton} onPress={onClose}>
-          <Ionicons name="close" size={32} color="white" />
+          <TouchableOpacity
+            style={[styles.navButton, { left: 0 }]}
+            onPress={onPrev}
+          >
+            <Feather name="chevron-left" size={80} color="white" />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={[styles.navButton, { right: 0 }]}
+            onPress={onNext}
+          >
+            <Feather name="chevron-right" size={80} opacity={0} color="white" />
+          </TouchableOpacity>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.prevButton} onPress={onPrev}>
-          <Feather name="chevron-left" size={50} color="white" />
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.nextButton} onPress={onNext}>
-          <Feather name="chevron-right" size={50} color="white" />
+        <TouchableOpacity
+          activeOpacity={1}
+          onPress={onClose}
+          style={styles.closeButton}
+        >
+          <Ionicons name="close" size={32} opacity={0} color="white" />
         </TouchableOpacity>
       </TouchableOpacity>
     </Modal>
@@ -37,9 +48,10 @@ const styles = StyleSheet.create({
   imageContainer: {
     borderRadius: 15,
     overflow: "hidden",
-    width: "80%",
+    width: "90%",
     height: "70%",
     backgroundColor: "white",
+    position: "relative",
   },
   image: {
     width: "100%",
@@ -47,19 +59,19 @@ const styles = StyleSheet.create({
   },
   closeButton: {
     position: "absolute",
-    top: 30,
-    right: 10,
     padding: 10,
+    top: 20,
+    right: 10,
   },
-  prevButton: {
+  navButton: {
     position: "absolute",
-    top: "45%",
-    left: -1,
-  },
-  nextButton: {
-    position: "absolute",
-    top: "45%",
-    right: -1,
+    top: 0,
+    bottom: 0,
+    justifyContent: "center",
+    alignItems: "center",
+    width: "50%",
+    zIndex: 1, // To make the nav buttons clickable even if outside the image
+    opacity: 0.5, // Adjust opacity for visibility
   },
 });
 
