@@ -17,7 +17,7 @@ const ViewStoryContent = ({ isVisible, onClose, source, onNext, onPrev }) => {
             style={[styles.navButton, { left: 0 }]}
             onPress={onPrev}
           >
-            <Feather name="chevron-left" size={80} color="white" />
+            <Feather name="chevron-left" size={80} opacity={0} color="white" />
           </TouchableOpacity>
           <TouchableOpacity
             style={[styles.navButton, { right: 0 }]}
@@ -31,7 +31,7 @@ const ViewStoryContent = ({ isVisible, onClose, source, onNext, onPrev }) => {
           onPress={onClose}
           style={styles.closeButton}
         >
-          <Ionicons name="close" size={32} opacity={0} color="white" />
+          <Ionicons name="close" size={32} color="white" />
         </TouchableOpacity>
       </TouchableOpacity>
     </Modal>
